@@ -1,13 +1,17 @@
 from pydantic import BaseModel
+from sqlalchemy import create_engine,Column,String,Integer
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
-#pydantic 
 
-#user model
-class User(BaseModel):
-    id:int
-    name:str
-    email:str
-    password:str
-    phone:str
+
+SQLACHEMY_DATABASE_URL ="sqlite:///database.db"
+#postgresql database
+#SQLACHEMY_DATABASE_URL ="postgresql://username:password@postgresserver/db"
+engine = create_engine(SQLACHEMY_DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+Base = declarative_base()
+
 
 
