@@ -4,7 +4,7 @@ Models for ORM operations and define database relationships
 
 """
 
-from .database import Base
+from database import Base
 from sqlalchemy import Boolean,Integer,String,ForeignKey,Column
 from sqlalchemy.orm import relationship
 
