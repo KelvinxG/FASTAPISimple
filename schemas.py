@@ -1,3 +1,10 @@
+"""
+
+schemas is for data validation
+
+
+"""
+
 from pydantic import BaseModel
 from typing import Optional, List, Dict, Any, Union
 from datetime import datetime
