@@ -1,18 +1,11 @@
+"""
+main.py to run the application
+
+"""
+import uvicorn
 from fastapi import FastAPI,Request
 from pydantic import BaseModel
 from fastapi.responses import HTMLResponse
-
-#import UserMixin
-
-
-
-
-class User(BaseModel):
-    id:int 
-    username:str
-    password:str
-    email:str
-    phone:str
 
 
 
@@ -32,6 +25,6 @@ def read_root():
     """
     return HTMLResponse(content=html_element,status_code=200)
 
-@app.post('/createUser/')
-async def create_user(users:User):
-    return  users
+
+if __name__ == '__main__':
+    uvicorn.run(app,debug=True,port=8000)
