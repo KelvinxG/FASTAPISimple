@@ -1,5 +1,9 @@
-from pydantic import BaseModel
-from sqlalchemy import create_engine,Column,String,Integer
+"""
+database.py for creating a database connection and configuration settings
+"""
+
+from pydantic import BaseModel #Data validation
+from sqlalchemy import create_engine,Column,String,Integer #Database connection settings
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
