@@ -30,7 +30,7 @@ class Instructors(Base):
     instructor_email = Column(String(20), nullable=False)
     instructor_phone = Column(String(20), nullable=False)
     course_available = Column(String(20), nullable=False)
-    course_id = Column(Integer, ForeignKey('courses.course_id'), nullable=False)
+
 
         
 class Students(Base):
@@ -40,7 +40,7 @@ class Students(Base):
     student_email = Column(String(20), nullable=False)
     student_phone = Column(String(20), nullable=False)
     class_enrollment = Column(String(20), nullable=False)
-    course_id = Column(Integer, ForeignKey('courses.course_id'), nullable=False)
+
 
 
 
