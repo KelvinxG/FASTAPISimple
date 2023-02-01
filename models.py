@@ -9,7 +9,7 @@ from sqlalchemy import Boolean,Integer,String,ForeignKey,Column
 from sqlalchemy.orm import relationship
 
 #User
-class User(Base):
+class UserModel(Base):
     __tablename__= 'users'
 
     id = Column(Integer, primary_key=True)
@@ -23,7 +23,7 @@ class User(Base):
     def __repr__(self):
         return '<User {}>'.format(self.username)
 
-class Instructors(Base):
+class InstructorsModel(Base):
     __tablename__ = 'instructors'
     instructor_id = Column(Integer, primary_key=True)
     instructor_name = Column(String(20), nullable=False)
@@ -33,7 +33,7 @@ class Instructors(Base):
 
 
         
-class Students(Base):
+class StudentsModel(Base):
     __tablename__ ='students'
     student_id = Column(Integer, primary_key=True)
     student_name = Column(String(20), nullable=False)
@@ -44,12 +44,12 @@ class Students(Base):
 
 
 
-class Course(Base):
+class CourseModel(Base):
     __tablename__ = 'courses'
     course_id = Column(Integer, primary_key=True)
     course_name = Column(String(20), nullable=False)
     course_code = Column(String(20), nullable=False)
     course_description = Column(String(200), nullable=False)
     instructor_id = Column(Integer, ForeignKey('instructors.instructor_id'))
-    students = relationship('Students', backref='courses')
+    # students = relationship('Students', backref='courses')
 
